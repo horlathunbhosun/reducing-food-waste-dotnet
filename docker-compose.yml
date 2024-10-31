@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    container_name: mssql_container
+    environment:
+      SA_PASSWORD: "Olatunbosun!!"  # Change this to a strong password
+      ACCEPT_EULA: "Y"                    # Required to accept the SQL Server EULA
+    ports:
+      - "1433:1433"                       # Expose the SQL Server port 1433
+    volumes:
+      - mssql_data:/var/opt/mssql          # Persistent volume for SQL Server data
+
+volumes:
+  mssql_data:                              # Define a volume to persist data
