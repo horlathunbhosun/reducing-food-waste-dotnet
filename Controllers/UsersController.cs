@@ -38,5 +38,6 @@ namespace wastemanagementapi.Controllers
             return Ok(user.ToUserResponseDTO());
         }
 
+
     }
 }
